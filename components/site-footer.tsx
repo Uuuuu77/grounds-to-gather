@@ -1,0 +1,2 @@
+import Link from 'next/link'
+export function SiteFooter(){return <footer className="mt-20 bg-foreground px-5 py-12 text-background"><div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:items-end md:justify-between"><div><p className="font-serif text-2xl">Grounds to Gather</p><p className="mt-2 max-w-xs text-sm leading-6 opacity-70">Grounded in Grace. Gathered in Love.</p></div><div className="flex gap-5 text-sm opacity-80"><Link href="/shop">Shop</Link><Link href="/story">Story</Link><Link href="/contact">Contact</Link></div></div></footer>}

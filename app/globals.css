@@ -1,0 +1,3 @@
+@import 'tailwindcss';
+@theme inline { --font-sans: var(--font-body); --font-serif: var(--font-display); --color-background: #fdfbf7; --color-foreground: #3b2412; --color-primary: #6f4e37; --color-primary-foreground: #fdfbf7; --color-muted: #e8dcc8; --color-muted-foreground: #765e4b; --color-border: #e8dcc8; --color-card: #f7f1e8; --radius: 0.25rem; }
+* { box-sizing: border-box; } body { background:#fdfbf7; color:#3b2412; font-family:var(--font-body), sans-serif; } h1,h2,h3,h4 { font-family:var(--font-display), serif; } a,button { transition: all .2s ease; } :focus-visible { outline:2px solid #6f4e37; outline-offset:3px; }
