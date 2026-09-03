@@ -1,0 +1,4 @@
+datasource db { provider = "postgresql" url = env("DATABASE_URL") }
+generator client { provider = "prisma-client-js" }
+model Product { id String @id @default(uuid()) name String slug String @unique description String weightG Int priceKsh Int imageUrl String stock Int active Boolean @default(true) createdAt DateTime @default(now()) @@map("products") }
+model Order { id String @id @default(uuid()) customerName String phone String email String address String items Json subtotalKsh Int status String @default("pending") paymentMethod String paymentRef String? createdAt DateTime @default(now()) @@map("orders") }

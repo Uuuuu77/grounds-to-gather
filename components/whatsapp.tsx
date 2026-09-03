@@ -1,0 +1,1 @@
+export function WhatsApp(){return <a href="https://wa.me/254700000000?text=Hello%20Grounds%20to%20Gather" target="_blank" rel="noreferrer" aria-label="Chat with Grounds to Gather on WhatsApp" className="fixed bottom-5 right-5 z-10 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground shadow-lg hover:bg-foreground">WhatsApp</a>}
