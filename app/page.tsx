@@ -26,7 +26,7 @@ export default function Home() {
         </div>
         <div className="relative aspect-[4/5] overflow-hidden bg-muted">
           <Image
-            src="/coffee-bag.png"
+            src="/grounds-brew.jpg"
             alt="Grounds to Gather coffee bag beside a pour-over setup"
             fill
             className="object-cover"
