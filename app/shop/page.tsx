@@ -19,7 +19,7 @@ export default function Shop() {
             <div className="relative aspect-[4/3] overflow-hidden bg-[url('/images/shop/product-backdrop.png')] bg-cover bg-center p-6 md:p-10">
               <Image src={p.imageUrl} alt={`${p.name} roast atmosphere`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width:768px) 100vw, 50vw" />
             </div>
-            <div className="mt-5 flex justify-between gap-4"><div><h2 className="font-serif text-2xl">{p.name}</h2><p className="mt-1 text-sm text-muted-foreground">{p.weightG}g · {p.roast} roast · {p.origin}</p></div><p className="font-semibold">KSh {p.priceKsh.toLocaleString()}</p></div>
+            <div className="mt-5 flex justify-between gap-4 rounded-[var(--radius)] bg-light-surface p-5 text-on-light-surface"><div><h2 className="font-serif text-2xl text-on-light-surface">{p.name}</h2><p className="mt-1 text-sm text-on-light-surface/75">{p.weightG}g · {p.roast} roast · {p.origin}</p></div><p className="font-semibold text-on-light-surface">KSh {p.priceKsh.toLocaleString()}</p></div>
           </Link>
         ))}
       </div>
