@@ -11,6 +11,8 @@
   --color-muted-foreground: #765e4b;
   --color-border: #e8dcc8;
   --color-card: #f7f1e8;
+  --color-light-surface: #f7f1e8;
+  --color-on-light-surface: #3b2412;
   --radius: 0.25rem;
 }
 
