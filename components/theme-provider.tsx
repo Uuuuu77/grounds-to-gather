@@ -11,8 +11,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const stored = window.localStorage.getItem('gtg-theme') as Theme | null
-    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-    const nextTheme = stored === 'dark' || stored === 'light' ? stored : preferred
+    const nextTheme = stored === 'dark' || stored === 'light' ? stored : 'light'
     setThemeState(nextTheme)
     document.documentElement.classList.toggle('dark', nextTheme === 'dark')
   }, [])

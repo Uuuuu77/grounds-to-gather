@@ -33,3 +33,6 @@ body { background: var(--color-background); color: var(--color-foreground); font
 h1, h2, h3, h4 { font-family: var(--font-display), serif; }
 a, button, input, textarea, label { transition: background-color .2s ease, border-color .2s ease, color .2s ease, opacity .2s ease, transform .2s ease; }
 :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+
+.theme-surface { background-color: var(--color-background); color: var(--color-foreground); }
+.theme-border { border-color: var(--color-border); }
