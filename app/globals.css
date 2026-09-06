@@ -38,3 +38,8 @@ a, button, input, textarea, label { transition: background-color .2s ease, borde
 
 .theme-surface { background-color: var(--color-background); color: var(--color-foreground); }
 .theme-border { border-color: var(--color-border); }
+.theme-icon { color: var(--color-foreground); }
+.theme-link { color: var(--color-foreground); }
+.theme-link:hover { color: var(--color-primary); }
+.dark .theme-surface { background-color: var(--color-background); color: var(--color-foreground); }
+.dark .theme-border { border-color: var(--color-border); }
