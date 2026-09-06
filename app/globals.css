@@ -1,3 +1,35 @@
 @import 'tailwindcss';
-@theme inline { --font-sans: var(--font-body); --font-serif: var(--font-display); --color-background: #fdfbf7; --color-foreground: #3b2412; --color-primary: #6f4e37; --color-primary-foreground: #fdfbf7; --color-muted: #e8dcc8; --color-muted-foreground: #765e4b; --color-border: #e8dcc8; --color-card: #f7f1e8; --radius: 0.25rem; }
-* { box-sizing: border-box; } body { background:#fdfbf7; color:#3b2412; font-family:var(--font-body), sans-serif; } h1,h2,h3,h4 { font-family:var(--font-display), serif; } a,button { transition: all .2s ease; } :focus-visible { outline:2px solid #6f4e37; outline-offset:3px; }
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+  --color-background: #fdfbf7;
+  --color-foreground: #3b2412;
+  --color-primary: #6f4e37;
+  --color-primary-foreground: #fdfbf7;
+  --color-muted: #e8dcc8;
+  --color-muted-foreground: #765e4b;
+  --color-border: #e8dcc8;
+  --color-card: #f7f1e8;
+  --radius: 0.25rem;
+}
+
+:root { color-scheme: light; }
+.dark {
+  color-scheme: dark;
+  --color-background: #1c1410;
+  --color-foreground: #f5efe6;
+  --color-primary: #c99f78;
+  --color-primary-foreground: #1c1410;
+  --color-muted: #3a2b22;
+  --color-muted-foreground: #d5c2ae;
+  --color-border: #59483b;
+  --color-card: #2a1f18;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { background: var(--color-background); color: var(--color-foreground); font-family: var(--font-body), sans-serif; transition: background-color .2s ease, color .2s ease; }
+h1, h2, h3, h4 { font-family: var(--font-display), serif; }
+a, button, input, textarea, label { transition: background-color .2s ease, border-color .2s ease, color .2s ease, opacity .2s ease, transform .2s ease; }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
