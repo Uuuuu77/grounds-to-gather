@@ -112,6 +112,14 @@ No customer accounts for v1. Guest checkout only. Add accounts later if repeat o
 >
 > Grounded in Grace. Gathered in Love.
 
+## Verification and security notes
+
+- `npm run typecheck`, `npm test`, and `npm run build` are the local verification baseline.
+- Playwright browser coverage is configured with `npm run test:e2e`; the sandbox may require system Chromium libraries before it can launch.
+- Response headers include `X-Content-Type-Options`, strict referrer policy, HSTS, a restrictive Permissions Policy, and report-only CSP.
+- `npm audit --audit-level=high` currently reports high-severity transitive Prisma development-tool advisories involving Hono. The application has no Hono runtime dependency; upgrading Prisma requires a breaking-version review.
+- No payment webhook route or Flutterwave secret-key usage exists in the current application, so webhook verification remains a pre-launch integration requirement rather than an active endpoint.
+
 ## Deployment
 
 1. Push repo to GitHub.
