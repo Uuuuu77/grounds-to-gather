@@ -10,6 +10,10 @@ const body = DM_Sans({ subsets: ['latin'], variable: '--font-body' })
 const display = Playfair_Display({ subsets: ['latin'], variable: '--font-display' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://groundstogather.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: 'Grounds to Gather | Grounded in Grace. Gathered in Love.',
   description: 'East African coffee, roasted in Nairobi. Every bag gathers your table and builds a future at its source.',
 }
