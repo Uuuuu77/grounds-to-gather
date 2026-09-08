@@ -128,6 +128,27 @@ No customer accounts for v1. Guest checkout only. Add accounts later if repeat o
 4. Run Prisma migrations against Neon before first deploy.
 5. In the Vercel project, go to Domains, add the custom domain, and update the DNS records at the registrar exactly as Vercel specifies (A record or CNAME depending on whether it's a root domain or subdomain).
 
+### Custom domain: `groundstogather.com`
+
+The configured Vercel domain is `groundstogather.com` — with the `s` in `grounds`. `groundtogather.com` is a different hostname and will not verify against this project unless it is added separately in Vercel.
+
+The current “Invalid configuration” error means the domain is assigned to this Vercel project, but its DNS is still delegated to Google Domains rather than Vercel. Fix it at the domain registrar using one of these supported setups:
+
+**Option A — keep registrar DNS (recommended if other records exist):**
+
+- Root/apex `@` — `A` — `76.76.21.21`
+- `www` — `CNAME` — the exact Vercel target shown in the project’s Domains panel (commonly `cname.vercel-dns.com`)
+- Remove conflicting apex A/AAAA records and conflicting `www` CNAME records.
+
+**Option B — delegate DNS to Vercel:**
+
+- Replace the registrar nameservers with `ns1.vercel-dns.com` and `ns2.vercel-dns.com`.
+- Do not keep a mixture of old Google Domains nameservers and Vercel nameservers.
+
+After saving the registrar change, allow DNS propagation, then return to Vercel and use Domains → `groundstogather.com` → Refresh/Verify. Vercel can issue the certificate only after the DNS records resolve correctly. Do not commit DNS records, tokens, or registrar credentials to this repository.
+
+The repository cannot change registrar DNS automatically; the nameserver or DNS-record update must be made in the registrar account that controls `groundstogather.com`.
+
 ## Build order
 
 1. Scaffold Next.js + Tailwind + shadcn/ui, set the brand palette as Tailwind theme tokens.
