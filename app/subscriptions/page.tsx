@@ -6,7 +6,7 @@ import { useCart } from '@/components/cart'
 
 const rhythms = [
   { value: 'monthly', label: 'Monthly', price: 'KSh 1,250', detail: 'A fresh 400g bag every month.' },
-  { value: 'bi-monthly', label: 'Bi-monthly', price: 'KSh 1,250', detail: 'A fresh 400g bag every two months.' },
+  { value: 'twice-monthly', label: 'Twice a Month', price: 'KSh 1,250', detail: 'A fresh 400g bag, delivered twice every month.' },
 ]
 
 export default function SubscriptionsPage() {
@@ -18,7 +18,7 @@ export default function SubscriptionsPage() {
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    add({ ...selected, id: `${selected.id}-${plan}`, name: `${selected.name} — ${plan === 'monthly' ? 'Monthly' : 'Bi-monthly'}` })
+    add({ ...selected, id: `${selected.id}-${plan}`, name: `${selected.name} — ${plan === 'monthly' ? 'Monthly' : 'Twice a Month'}` })
     setSubmitted(true)
   }
 
