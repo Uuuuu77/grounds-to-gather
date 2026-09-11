@@ -149,6 +149,10 @@ After saving the registrar change, allow DNS propagation, then return to Vercel 
 
 The repository cannot change registrar DNS automatically; the nameserver or DNS-record update must be made in the registrar account that controls `groundstogather.com`.
 
+## Iteration v10 scope
+
+The subscription cadence label and stored cart value now use `twice-monthly`, displayed as “Twice a Month,” with twice-monthly delivery copy. Resend email notifications and Flutterwave payments are intentionally deferred until their integrations and environment variables are connected; no email or payment endpoint is active in this partial iteration.
+
 ## Build order
 
 1. Scaffold Next.js + Tailwind + shadcn/ui, set the brand palette as Tailwind theme tokens.
