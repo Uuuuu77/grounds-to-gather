@@ -15,7 +15,7 @@ export default function Shop() {
       </section>
       <div className="mt-12 grid gap-8 md:grid-cols-2">
         {products.map((p) => (
-          <Link href={`/shop/${p.slug}`} key={p.id} className="group block">
+          <Link href={`/shop/${p.slug}`} key={p.id} className="interactive-control group block">
             <div className="relative aspect-[4/3] overflow-hidden bg-[url('/images/shop/product-backdrop.png')] bg-cover bg-center p-6 md:p-10">
               <Image src={p.imageUrl} alt={`${p.name} roast atmosphere`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width:768px) 100vw, 50vw" />
             </div>

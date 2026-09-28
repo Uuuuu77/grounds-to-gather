@@ -34,6 +34,11 @@ html, body { min-height: 100%; }
 body { background: var(--color-background); color: var(--color-foreground); font-family: var(--font-body), sans-serif; transition: background-color .2s ease, color .2s ease; }
 h1, h2, h3, h4 { font-family: var(--font-display), serif; }
 a, button, input, textarea, label { transition: background-color .2s ease, border-color .2s ease, color .2s ease, opacity .2s ease, transform .2s ease; }
+.interactive-control { transition: all 150ms ease-out; }
+.interactive-control:hover { filter: brightness(0.97); }
+.interactive-control:active { transform: scale(0.95); }
+.interactive-control:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+.interactive-control:disabled { cursor: wait; opacity: 0.6; }
 :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
 
 .theme-surface { background-color: var(--color-background); color: var(--color-foreground); }
