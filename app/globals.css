@@ -13,6 +13,8 @@
   --color-card: #f7f1e8;
   --color-light-surface: #f7f1e8;
   --color-on-light-surface: #3b2412;
+  --color-on-light-surface-muted: #765e4b;
+  --color-light-surface-border: #6f4e37;
   --radius: 0.25rem;
 }
 
@@ -46,5 +48,9 @@ a, button, input, textarea, label { transition: background-color .2s ease, borde
 .theme-icon { color: var(--color-foreground); }
 .theme-link { color: var(--color-foreground); }
 .theme-link:hover { color: var(--color-primary); }
+.page-accent { color: var(--color-primary); }
+.light-surface { background-color: var(--color-light-surface); color: var(--color-on-light-surface); }
+.light-surface-border { border-color: var(--color-light-surface-border); }
+.light-surface-muted { color: var(--color-on-light-surface-muted); }
 .dark .theme-surface { background-color: var(--color-background); color: var(--color-foreground); }
 .dark .theme-border { border-color: var(--color-border); }
