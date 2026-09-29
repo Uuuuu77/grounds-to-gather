@@ -32,7 +32,7 @@ export function SiteHeader() {
           </button>
           <Link aria-label={`Cart with ${count} items`} href="/cart" className="interactive-control relative">
             <ShoppingBag aria-hidden="true" className="theme-icon" size={20} strokeWidth={2.2} />
-            {count > 0 && <span className="absolute -right-3 -top-3 rounded-full bg-primary px-1.5 text-[10px] text-primary-foreground">{count}</span>}
+            {count > 0 && <span className="absolute -right-3 -top-3 rounded-full light-surface px-1.5 text-[10px] font-semibold">{count}</span>}
           </Link>
           <button type="button" className="interactive-control rounded-full p-2 theme-icon hover:bg-card md:hidden" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
             {open ? <X aria-hidden="true" className="theme-icon" size={21} strokeWidth={2.2} /> : <Menu aria-hidden="true" className="theme-icon" size={21} strokeWidth={2.2} />}
