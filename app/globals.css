@@ -52,5 +52,7 @@ a, button, input, textarea, label { transition: background-color .2s ease, borde
 .light-surface { background-color: var(--color-light-surface); color: var(--color-on-light-surface); }
 .light-surface-border { border-color: var(--color-light-surface-border); }
 .light-surface-muted { color: var(--color-on-light-surface-muted); }
+.selection-check { position: absolute; right: 1rem; top: 1rem; display: grid; height: 1.5rem; width: 1.5rem; place-items: center; border-radius: 999px; background: #c58b2a; color: #fffaf0; font-size: .875rem; font-weight: 700; }
+.dark .selection-check { background: #e0a83b; color: #2a1f18; }
 .dark .theme-surface { background-color: var(--color-background); color: var(--color-foreground); }
 .dark .theme-border { border-color: var(--color-border); }
