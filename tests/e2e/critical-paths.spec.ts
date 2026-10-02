@@ -14,6 +14,24 @@ test('product route and subscription flow are reachable', async ({ page }) => {
   await expect(page.getByText('Added to cart.')).toBeVisible()
 })
 
+test('customer can add a product to the cart', async ({ page }) => {
+  await page.goto('/shop/gathinja-medium-roast')
+  await page.getByRole('button', { name: /Add to cart/i }).click()
+  await expect(page.getByRole('button', { name: /Added/i })).toBeDisabled()
+  await page.goto('/cart')
+  await expect(page.getByText('Gathinja Medium Roast')).toBeVisible()
+})
+
+test('inquiry form builds a WhatsApp handoff', async ({ page }) => {
+  await page.goto('/contact')
+  await page.getByLabel('Name').fill('Ebe')
+  await page.getByLabel('Phone or email').fill('ebe@example.com')
+  await page.getByLabel('Message').fill('Order question')
+  const popup = page.waitForEvent('popup')
+  await page.getByRole('button', { name: /Send inquiry/i }).click()
+  await expect(await popup).toHaveURL(/wa\.me\/254708997089\?text=/)
+})
+
 test('theme preference persists after reload', async ({ page }) => {
   await page.goto('/')
   await page.getByRole('button', { name: /Switch to dark mode/i }).click()
