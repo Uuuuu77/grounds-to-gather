@@ -1,6 +1,7 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
+import { formatInquiryMessage, isValidInquiry } from '@/lib/inquiry'
 
 const whatsappUrl = 'https://wa.me/254708997089'
 
@@ -10,16 +11,16 @@ export default function Contact() {
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
-    const message = [
-      'New inquiry from the website:',
-      `Name: ${data.get('name')}`,
-      `Contact: ${data.get('contact')}`,
-      `Topic: ${data.get('topic')}`,
-      `Message: ${data.get('message')}`,
-    ].join('\n')
+    const inquiry = {
+      name: String(data.get('name') ?? ''),
+      contact: String(data.get('contact') ?? ''),
+      topic: String(data.get('topic') ?? ''),
+      message: String(data.get('message') ?? ''),
+    }
+    if (!isValidInquiry(inquiry)) return
 
     setSubmitted(true)
-    window.open(`${whatsappUrl}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer')
+    window.open(`${whatsappUrl}?text=${encodeURIComponent(formatInquiryMessage(inquiry))}`, '_blank', 'noopener,noreferrer')
   }
 
   return (

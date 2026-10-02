@@ -47,6 +47,16 @@ Set the environment variables before using payments or email. Run Prisma migrati
 - `npm run test:e2e` — Playwright tests
 - `npm run lint` — ESLint
 
+## Color tokens
+
+The design system separates colors by the surface they appear on:
+
+- `light-surface` and `light-surface-muted` are fixed cream-card colors. Use them for card content, quantity fields, and other surfaces that stay light in both themes.
+- `theme-surface`, `theme-border`, and `page-text` are page-background tokens. They resolve to explicit light and dark values because the page background changes with the theme.
+- `accent-selected` and `accent-selected-bg` are reserved for selected, counted, or active states. Use the selection indicator together with the accent so state is never communicated by subtle border color alone.
+
+Avoid inline color values and avoid using theme-linked foreground colors inside fixed light surfaces. Add new semantic tokens when a new surface category is introduced.
+
 ## Integrations
 
 Payments use Safaricom Daraja STK Push for M-Pesa. The account reference is the order ID so payments can be reconciled. Daraja production access requires Safaricom approval and production credentials.

@@ -7,14 +7,15 @@ type ThemeContextValue = { theme: Theme; setTheme: (theme: Theme) => void }
 const ThemeContext = createContext<ThemeContextValue>({ theme: 'light', setTheme: () => undefined })
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('light')
+  const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'light'
+    const stored = window.localStorage.getItem('gtg-theme') as Theme | null
+    return stored === 'dark' || stored === 'light' ? stored : 'light'
+  })
 
   useEffect(() => {
-    const stored = window.localStorage.getItem('gtg-theme') as Theme | null
-    const nextTheme = stored === 'dark' || stored === 'light' ? stored : 'light'
-    setThemeState(nextTheme)
-    document.documentElement.classList.toggle('dark', nextTheme === 'dark')
-  }, [])
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+  }, [theme])
 
   function setTheme(nextTheme: Theme) {
     setThemeState(nextTheme)
